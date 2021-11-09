@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/misFunciones.js"></script>  
+    <title>Front Final Reto 3 - 4 - 5 </title>
+    <meta charset="utf-8">
+    <meta name="description" content="Este es un documento HTML5">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <link rel="stylesheet" href="misestilos.css">
+</head>
+
+
+<body>
+    <h1> Aplicación Motos </h1>
+
+    <!--Tabla Categoria-->
+    <h2>Categoria </h2>
+    <div id="resultado1"></div>
+    <script type="text/javascript"> 
+    window.onload = autoInicioCategoria();
+    </script>
+
+    <div>
+        <input type="text" id="nameCategoria" placeholder="name">
+        <input type="text" id="descriptionCategoria" placeholder="description">
+
+    </div>
+    <button onclick="guardarInformacionCategorias()">Guardar Categorias</button>
+
+    <!--Tabla Motorbike-->
+    <h2>Moto </h2>
+    <div id="resultado2"></div>
+    <script type="text/javascript"> 
+    window.onload = autoInicioMoto();
+    </script>
+
+    <div>
+        <input type="text" id="nameMoto" placeholder="name">
+        <input type="text" id="brandMoto" placeholder="brand">
+        <input type="number" id="yearMoto" placeholder="year">
+        <input type="text" id="descriptionMoto" placeholder="description">
+        <label for="select-category">Category:</label>
+        <select id="select-category"></select>
+
+    </div>
+    <button onclick="guardarInformacionMoto()">Guardar Motos</button>
+
+    <!--Tabla Cliente-->
+    <h2>Cliente </h2>
+    <div id="resultado3"></div>
+    <script type="text/javascript"> 
+    window.onload = autoInicioCliente();
+    </script>
+
+    <div>
+        <input type="text" id="emailCliente" placeholder="email">
+        <input type="text" id="passwordCliente" placeholder="password">
+        <input type="text" id="nameCliente" placeholder="name">
+        <input type="text" id="ageCliente" placeholder="age">
+
+    </div>
+    <button onclick="guardarInformacionCliente()">Guardar Clientes</button>
+
+    <!--Tabla Mensaje -->
+    <h2>Mensaje </h2>
+    <div id="resultado4"></div>
+    <script type="text/javascript"> 
+    window.onload = autoInicioMensaje();
+    </script>
+
+    <div>
+        <input type="text" id="messageText" placeholder="messageText">
+
+    </div>
+    <button onclick="guardarInformacionMensaje()">Guardar Mensajes</button>
+    <label for="select-client">Cliente:</label>
+    <select id="select-client"><option disabled selected>cliente</option></select>
+        <script type="text/javascript">
+            window.onload = autoInicioRelacionCliente();
+        </script>
+    <label for="select-motorbike">Moto:</label>
+    <select id="select-motorbike"><option disabled selected>moto</option></select>
+
+<!--Tabla Reservaciones -->
+<h2>Reservacion </h2>
+<div id="miListaReservation"></div>
+<script type="text/javascript">
+   window.onload = autoInicioReservation();
+</script>
+<label>StartDate</label>
+<input class="controladorReservaciones" type="date" id="startDate" placeholder="startDate"><br>
+<label>DevolutionDate</label>
+<input class="controladorReservaciones" type="date" id="devolutionDate" placeholder="devolutionDate"><br>
+<label>Status: "completed / cancelled"</label>
+<input class="controladorReservaciones" type="text" id="status" placeholder="completed or cancelled"><br>
+<label for="select-clientR">Cliente:</label>
+<select id="select-clientR"><option disabled selected>cliente</option></select>
+    <script type="text/javascript">
+        window.onload = autoInicioRelacionClienteR();
+    </script>
+        <label for="select-motorbikeR">Moto:</label>
+        <select id="select-motorbikeR"><option disabled selected>moto</option></select>
+        <script type="text/javascript">
+            window.onload = autoInicioMotoR();
+        </script>
+ <button onclick=" guardarInformacionReservation()">Guardar Reserva</button>
+
+<!-- REPORTES -->
+    <h2> Reportes Reservas </h2>
+
+    <button onclick="traerReporteStatus()"> Generar Reporte Status Reservas </button>
+    <div id="resultadoStatus"></div>
+    
+    <label for="RstarDate">Start Date:</label>
+    <input type="date" id="RstarDate" placeholder="descripcion">
+    <label for="RdevolutionDate">Devolution Date:</label>
+    <input type="date" id="RdevolutionDate" placeholder="descripcion">
+    <button onclick="traerReporteDate()"> Generar Reporte por fecha </button>
+    <div id="resultadoDate"></div>
+ 
+    <button onclick="traerReporteClientes()"> Generar Reporte Clientes y Cantidad de reservas por cliente </button>
+    <div id="resultadoClientes"></div>
+
+</body>
+
+
+
+</html>
